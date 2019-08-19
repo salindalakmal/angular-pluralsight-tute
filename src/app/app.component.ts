@@ -6,15 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-plural-tut';
-  username = '';
-  showSecret = false;
-  log = [];
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
 
-  onToggleDetails() {
-    this.showSecret = !this.showSecret;
-    //this.log.push(this.log.length + 1);
-    this.log.push(new Date());
+  onIntervalFired(firedNumber: number) {
+    if(firedNumber % 2 === 0) {
+      this.evenNumbers.push(firedNumber);
+    } else{
+      this.oddNumbers.push(firedNumber);
+    }
   }
 
 }
