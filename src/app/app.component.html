@@ -1,4 +1,20 @@
-<app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
-<br>
-<app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
-<app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+<p appBasicHighlight>
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore velit quia officia nulla in eveniet doloribus praesentium delectus ducimus animi tempora accusantium nam, ratione temporibus reiciendis vel. Accusantium, quis ipsa!
+</p>
+<!-- <p appBetterHighlight [defaultColor]="'yellow'" highlightColor="'red'">
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore velit quia officia nulla in eveniet doloribus praesentium delectus ducimus animi tempora accusantium nam, ratione temporibus reiciendis vel. Accusantium, quis ipsa!
+</p> -->
+<p [appBetterHighlight]="'red'" defaultColor="yellow">
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore velit quia officia nulla in eveniet doloribus praesentium delectus ducimus animi tempora accusantium nam, ratione temporibus reiciendis vel. Accusantium, quis ipsa!
+</p>
+<div *appUnless="unlessValue">
+  True:  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore a, at id corrupti vel adipisci tempore in consequatur, velit repudiandae quos, quae iste assumenda atque dolore error asperiores. Id, optio.
+</div>
+<div *appUnless="false">
+  False: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore a, at id corrupti vel adipisci tempore in consequatur, velit repudiandae quos, quae iste assumenda atque dolore error asperiores. Id, optio.
+</div>
+<div [ngSwitch]="value">
+  <p *ngSwitchCase="5"></p>
+  <p *ngSwitchCase="10"></p>
+  <p *ngSwitchDefault></p>
+</div>

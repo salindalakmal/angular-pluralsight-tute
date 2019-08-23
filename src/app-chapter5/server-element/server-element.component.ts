@@ -26,7 +26,6 @@ import { Content } from '@angular/compiler/src/render3/r3_ast';
 export class ServerElementComponent implements
   OnInit,
   OnChanges,
-  SimpleChanges,
   DoCheck,
   AfterContentInit,
   AfterContentChecked,
@@ -35,8 +34,8 @@ export class ServerElementComponent implements
   OnDestroy {
   @Input('srvElement') element: {type: string, name: string, content: string};
   @Input() name: string;
-  @ViewChild('headerTitle') header: ElementRef;
-  @ContentChild('ContentParagraph') paragraph: ElementRef;
+  @ViewChild('headerTitle', {static: false}) header: ElementRef;
+  @ContentChild('ContentParagraph', {static: false}) paragraph: ElementRef;
 
   constructor() {
     console.log('constructor called!');
