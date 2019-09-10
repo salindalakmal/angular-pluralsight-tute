@@ -1,0 +1,5 @@
+<div class="container">
+  <app-active-users [users]="activeUsers" (userSetToInactive)="onSetToInactive($event)"></app-active-users>
+  <hr>
+  <app-inactive-users [users]="inactiveUsers" (userSetToActive)="onSetToActive($event)"></app-inactive-users>
+</div>
